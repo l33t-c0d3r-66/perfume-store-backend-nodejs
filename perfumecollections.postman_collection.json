@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "147f4d45-66fa-4644-b392-b510630fa87b",
+		"name": "perfumecollections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18272845"
+	},
+	"item": [
+		{
+			"name": "authentication",
+			"item": [
+				{
+					"name": "Signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstname\":\"jawad\",\r\n    \"lastname\":\"hussain\",\r\n    \"email\":\"jawad@gmail.com\",\r\n    \"password\":\"12345\",\r\n    \"gender\":\"male\",\r\n    \"questionnaire\":true\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "perfume",
+			"item": [
+				{
+					"name": "AddPefume",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2MDQ1ODNhNTU5MmEwNTRhNTllMDAzMyIsImlzQWRtaW4iOnRydWUsImlhdCI6MTcxMTU2ODAzNiwiZXhwIjoxNzExODI3MjM2fQ.kiwcQQGfsj3CxcZuVmc5kvpK4zv_07J9KR5MT4l-uj4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Bleu De Chanel\",\r\n    \"description\": \"The woody and aromatic scent of Bleu de Chanel is an appealing fragrance for men. Introduced in 2010, this scent features fascinating notes of lemon, mint, pink pepper and grapefruit. The heart is filled with notes of nutmeg, ginger and jasmine, while the notes of vetiver, cedar, incense, patchouli, sandalwood, white musk and labdanum rule the base\",\r\n    \"price\": \"212062\",\r\n    \"images\": \"https://cdn.fragrancenet.com/images/photos/600x600/287996.jpg\",\r\n    \"typeof\": \"male\",\r\n    \"feellike\": \"Seductive & Bold\",\r\n    \"scentfamily\": [\"Fruity & Delicious\"],\r\n    \"quantity\":\"74\",\r\n    \"brandname\":\"Dior\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/perfume",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"perfume"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "perfumefind",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "perfumeupdate",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "getallperfume",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "recommendperfume",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Add Review",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "perfumereview",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "delete review",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User Pereferences",
+			"item": [
+				{
+					"name": "AddUserPrefernces",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "AddUserPrefernces Copy",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "CreateOrder",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
