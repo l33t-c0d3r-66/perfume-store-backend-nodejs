@@ -2,8 +2,8 @@ const mongoose = require("mongoose");
 
 const PerfumeSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true, unique: true },
-    description: { type: String, required: true, unique: true },
+    name: { type: String, required: true},
+    description: { type: String, required: true },
     price: { type: String, required: true },
     images: { type: String },
     typeof: { type: String, required: true },
