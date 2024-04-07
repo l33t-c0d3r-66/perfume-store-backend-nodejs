@@ -20,6 +20,45 @@ router.post("/", verifyTokenAndAdmin, async (req, res) => {
   }
 });
 
+
+
+
+router.get("/purchased/:id", async (req, res) => {
+  const userId = req.params.id;
+
+  try {
+      // Find orders of the user
+      const orders = await Order.find({ userId });
+
+      if (!orders || orders.length === 0) {
+          return res.status(404).json({ message: 'No orders found for this user.' });
+      }
+
+      let perfumesAll = [];
+
+      for (const order of orders) {
+          for (const orderItem of order.orderItems) {
+              // Find the perfume details using the id from orderItem
+              const perfume = await Perfume.findById(orderItem.id);
+              if (perfume) {
+                  perfumesAll.push(perfume);
+              }
+          }
+      }
+
+      res.status(200).json(perfumesAll);
+  } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Server Error' });
+  }
+});
+
+
+
+
+
+
+
 router.get("/find/:id", verifyTokenAndAdmin, async (req, res) => {
   try {
     const perfume = await Perfume.findById(req.params.id);

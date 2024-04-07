@@ -19,10 +19,10 @@ router.post("/", verifyToken, async (req, res) => {
   }
 });
 
-router.get("/:id", verifyToken, async (req, res) => {
+router.get("/:id",verifyToken, async (req, res) => {
   try {
     const perfumeId = req.params.id;
-    const reviews = await Review.find({ perfumeId }).populate("perfumeId");
+    const reviews = await Review.find({ perfumeId }).populate("userId");
 
     if (!reviews) {
       throw new Error("Review not found");
